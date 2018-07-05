@@ -30,14 +30,14 @@ class BackpackTest < MiniTest::Test
   ##### TESTS ABOUT PACKED LUNCHES #####
   def test_that_packs_lunch_on_all_weekdays
     ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].each do |day|
-      backpack = build(:backpack, day_of_week: day)
+      backpack = build(:backpack, days_of_the_week: day)
       assert(backpack.items.include?('packed lunch'))
     end
   end
 
   def test_that_doesnt_pack_lunch_on_weekends
     ['saturday', 'sunday'].each do |day|
-      backpack = build(:backpack, day_of_week: day)
+      backpack = build(:backpack, days_of_the_week: day)
       refute(backpack.items.include?('packed lunch'))
     end
   end
@@ -47,14 +47,14 @@ class BackpackTest < MiniTest::Test
   # is something missing here?
 def test_that_packs_gym_on_moday_thursday
     ['monday', 'thursday'].each do |day|
-        backpack = build(:backpack, day_of_week: day)
+        backpack = build(:backpack, days_of_the_week: day)
         assert(backpack.items.include?('gym shoes'))
       end
 end
 
   ##### TESTS ABOUT PRINTING THE LIST #####
   def test_that_backpack_prints_correctly
-    backpack = build(:backpack, day_of_week: 'monday', weather: 'sunny')
+    backpack = build(:backpack, days_of_the_week: 'monday', weather: 'sunny')
     expected =
 "Melinda, here's your packing list!
 Day: monday, Weather: sunny
