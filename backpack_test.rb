@@ -55,7 +55,8 @@ end
   ##### TESTS ABOUT PRINTING THE LIST #####
   def test_that_backpack_prints_correctly
     backpack = build(:backpack, days_of_the_week: 'monday', weather: 'sunny')
-    expected =
+    expected = 
+
 "Melinda, here's your packing list!
 Day: monday, Weather: sunny
 

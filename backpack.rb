@@ -22,17 +22,12 @@ class Backpack
   def weather_today
     weather_forcast = @attributes[:weather]
       # Ensure appropriate clothing is added to backpack
+      @items << 'pants'
+      @items << 'shirt'
       if weather_forcast == 'rainy'
-        @items << 'pants'
-        @items << 'shirt'
         @items << 'umbrella'
       elsif weather_forcast == 'cold'
-        @items << 'pants'
-        @items << 'shirt'
         @items << 'jacket'
-      else
-        @items << 'pants'
-        @items << 'shirt'
       end
   end
 
